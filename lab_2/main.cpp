@@ -149,7 +149,7 @@ int third_task_part_two(int a, int X, int Y , int Z){
 int third_task_part_tree(int a, int O, int P){
     printf("Третья часть: ");
     if ((a >> O) & 1u){   // if bit == 1
-        a &= ~(1 << P);   // enjecting bit P
+        a &= ~(1 << P);   // del bit P
     }
     PrintBin(a);
     printf(", десятичная %d\n", a);
@@ -158,7 +158,7 @@ int third_task_part_tree(int a, int O, int P){
 
 int third_task_part_four(int a, int R, int S){
     printf("Четвертая часть: ");
-    if (((a >> R) & 1u) == false){   // if bit == 0
+    if (!((a >> R) & 1u)){   // if bit != 1
            a |= (1 << S);   // setting bit S
     }
     PrintBin(a);
