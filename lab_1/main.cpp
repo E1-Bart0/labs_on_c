@@ -22,7 +22,7 @@ void first_task ()
     for (int i = 0; i < 6; i++) {
         if (i < 4)
         {
-        retreat.pop_back();
+        retreat = string(6 - i, ' ');
         cout << retreat << letters_g << endl;
         letters_g += "ЖЖ";
         }
