@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <math.h>
 
+
 using namespace std;
 
 void first_task ()
