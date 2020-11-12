@@ -48,7 +48,7 @@ void second_task(){
     second_number = 2;
     third_number = 3;
     fourth_number = 4;
-    // scanf("%d%d%d%d", &first_number, &second_number, &third_number, &fourth_number);
+    //scanf("%d%d%d%d", &first_number, &second_number, &third_number, &fourth_number);
     summ = first_number + second_number + third_number + fourth_number;
     average = float(summ) / 4;
     multi = first_number * second_number * third_number * fourth_number;
@@ -103,6 +103,7 @@ int max_of_array(int massive[], int len_of_massive){
 }
 
 
+
 void fourth_task(){
     printf("\nЧетвертое задание:\n");
     int first_numbers[5] = {77, 13, 43, 55, 56};
@@ -126,7 +127,7 @@ void fourth_task(){
         int maximum = max_of_array(arrays[i], len_of_array);
         printf("Max of array#%d is %d\n", i+1, maximum);
     }
-
+	
     int month_numbers[3] = {4, 7, 10};
     for(int i = 0; i < 3; i++){
         if (3 <= month_numbers[i] && month_numbers[i] <= 5){
@@ -146,11 +147,43 @@ void fourth_task(){
     }    
 }
 
+void fourth_task_sergey(){
+	int len_of_array;
+	printf("vvedite dlinny massiva\n");
+    cin >> len_of_array;
+    int *arr = new int [len_of_array];
+ 	printf("Massiv:\n");
+    for ( int i=0; i<len_of_array; i++ ){
+    	cin >> arr[i];
+	}
+	int max = max_of_array(arr, len_of_array);
+	printf("Max of massive is %d\n", max);
+	printf("vvedite nomer mes9za\n");
+	for (int i=0; i<3; i++){	
+		printf("vvedite nomer mes9za\n");
+		int number_of_month;
+		cin >> number_of_month;
+	    if (3 <= number_of_month && number_of_month <= 5){
+	        printf("Mесяц %d соответсвует: Весна\n", number_of_month);
+	    }
+	    else if (6 <= number_of_month && number_of_month <= 8){
+	        printf("Mесяц %d соответсвует: Лето\n", number_of_month);
+	    }
+	    else if (9 <= number_of_month && number_of_month <= 11){
+	       printf("Mесяц %d соответсвует: Осень\n", number_of_month);
+	    }
+	    else
+	    {
+	        printf("Mесяц %d соответсвует: Зима\n", number_of_month);
+	    }
+	}
+}
+
 
 int main(int argc, char* argv[])
 {
-    first_task();
-    second_task();
-    third_task();
-    fourth_task();   
+//    first_task();
+//    second_task();
+//    third_task();
+    fourth_task_sergey();   
 }
