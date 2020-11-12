@@ -28,11 +28,11 @@ void first_task ()
         }
         else if (i == 4)
         {
-        cout << "    HH HH" << endl;
+        cout << "\tHH HH" << endl;
         }
         else
         {
-        cout << "    ZZZZZ" << endl;
+        cout << "\tZZZZZ" << endl;
         }
     };
 }
@@ -59,7 +59,7 @@ void second_task(){
 
 void third_task(){
     printf("\nТретье задание:\n");
-    double a_coeff, b_coeff, c_coeff, disriminant;
+    double a_coeff, b_coeff, c_coeff, discriminant;
     printf("Введите коэффициенты квадратного уравнения:\n");
     a_coeff = 1;
     b_coeff = 2;
@@ -70,29 +70,28 @@ void third_task(){
     }
     else
     {
-        disriminant = b_coeff * b_coeff - 4 * a_coeff * c_coeff;
-        if (disriminant > 0){
-            double x1= (-b_coeff + sqrt(disriminant)) / (2 * a_coeff);
-            double x2 = (-b_coeff - sqrt(disriminant)) / (2 * a_coeff);
+        discriminant = b_coeff * b_coeff - 4 * a_coeff * c_coeff;
+        if (discriminant > 0){
+            double x1= (-b_coeff + sqrt(discriminant)) / (2 * a_coeff);
+            double x2 = (-b_coeff - sqrt(discriminant)) / (2 * a_coeff);
             printf("Корни вещественные: x1=%lf, x2=%lf\n", x1, x2);
         }
-        else if (disriminant == 0){
+        else if (discriminant == 0){
             double x = (-b_coeff / (2 * a_coeff));
             printf("Один корень: x=%lf\n", x);
         }
         else {
             double real = -b_coeff / (2 * a_coeff);
-            double im = sqrt(-disriminant) / (2 * a_coeff);
+            double im = sqrt(-discriminant) / (2 * a_coeff);
             printf("Корни мнимые: x1=%lf+%lfi, x2=%lf-%lfi\n", real, im, real, im);
         }
     }
 }
 
 
-int max_of_array(int *massive){
-    int len_array = sizeof(massive) / sizeof(massive[0]);
+int max_of_array(int massive[], int len_of_massive){
     int max = 0;
-    for(int i = 0; i < len_array; ++i)
+    for(int i = 0; i < len_of_massive; i++)
     {
         if(massive[i] > max)
         {
@@ -101,6 +100,7 @@ int max_of_array(int *massive){
     };
     return max;
 }
+
 
 void fourth_task(){
     printf("\nЧетвертое задание:\n");
@@ -112,11 +112,17 @@ void fourth_task(){
     int sixth_numbers[8] = {78, 21, 91, 2, 26, 62, 71, 4};
 
     int *arrays[6] = {first_numbers, second_numbers, third_numbers, fourth_numbers, fifth_numbers, sixth_numbers};
-    
     int len_of_arrays = sizeof(arrays) / sizeof(arrays[0]);
-    // cout << len_of_arrays << endl;
     for(int i = 0; i < len_of_arrays; i++){
-        int maximum = max_of_array(arrays[i]);
+        int len_of_array;
+        if (i<3){
+            len_of_array = 5;
+        }
+        else
+        {
+            len_of_array = 8;
+        }        
+        int maximum = max_of_array(arrays[i], len_of_array);
         printf("Max of array#%d is %d\n", i+1, maximum);
     }
 
@@ -145,5 +151,5 @@ int main(int argc, char* argv[])
     first_task();
     second_task();
     third_task();
-    fourth_task();
+    fourth_task();   
 }
